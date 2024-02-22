@@ -122,6 +122,24 @@ public:
 		}
 			return *this;
 	}
+	list(list&& Right) noexcept
+	{
+		head = Right.head;
+		tail = Right.tail;
+		Right.head = nullptr;
+		Right.tail = nullptr;
+	}
+	list& operator=(list&& right) noexcept
+	{
+		if (&right == this)
+			return *this;
+		clear();
+		head = right.head;
+		tail = right.tail;
+		right.head = nullptr;
+		right.tail = nullptr;
+		return *this;
+	}
 	void swap(list<T>& right)
 	{
 		node<T>* tmp = head;

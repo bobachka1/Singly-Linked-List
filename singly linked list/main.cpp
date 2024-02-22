@@ -31,4 +31,9 @@ int main()
        std::cout << *it << ' ';
    }
    std::cout << std::endl;
+   list<int> c6 = std::move(c5);
+   for (Iterator<int> it = c6.begin(); it != c6.end(); it++)
+   {
+       std::cout << *it << ' ';
+   }
 }
